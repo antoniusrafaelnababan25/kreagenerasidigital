@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class SeoMeta extends Model
+{
+    use HasFactory;
+
+    protected $table = 'seo_meta';
+
+    protected $fillable = [
+        'seoable_id',
+        'seoable_type',
+        'meta_title',
+        'meta_description',
+        'canonical_url',
+        'og_title',
+        'og_description',
+        'og_image',
+        'twitter_card',
+        'schema_json',
+        'focus_keyword',
+        'is_indexable',
+        'is_followable',
+    ];
+
+    protected $casts = [
+        'schema_json' => 'array',
+        'is_indexable' => 'boolean',
+        'is_followable' => 'boolean',
+    ];
+
+    public function seoable()
+    {
+        return $this->morphTo();
+    }
+}

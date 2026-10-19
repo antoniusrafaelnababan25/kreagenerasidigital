@@ -1,0 +1,39 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+/* ═══════════════════════════════════════════════════════════
+   HIDE SCROLLBAR untuk Filament Admin
+   ═══════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+* {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+/* Filament spesifik */
+.fi-layout,
+.fi-body,
+.fi-sidebar,
+.fi-main,
+.fi-topbar,
+.fi-content {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.fi-layout::-webkit-scrollbar,
+.fi-body::-webkit-scrollbar,
+.fi-sidebar::-webkit-scrollbar,
+.fi-main::-webkit-scrollbar,
+.fi-topbar::-webkit-scrollbar,
+.fi-content::-webkit-scrollbar {
+    width: 0 !important;
+    display: none !important;
+}

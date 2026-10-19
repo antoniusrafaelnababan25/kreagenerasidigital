@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans, 'Inter'), ui-sans-serif, system-ui, sans-serif;
+        color: var(--theme-text, #111827);
+        background-color: var(--theme-background, #FFFFFF);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading, 'Poppins'), ui-sans-serif, system-ui, sans-serif;
+        font-weight: 700;
+    }
+}
+
+/* ─── Components ─── */
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5;
+        background-color: var(--theme-primary, #3B82F6);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--theme-secondary, #8B5CF6);
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border-2 transition-all duration-200;
+        border-color: var(--theme-primary, #3B82F6);
+        color: var(--theme-primary, #3B82F6);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--theme-primary, #3B82F6);
+        @apply text-white;
+    }
+
+    .card {
+        @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold mb-4;
+    }
+
+    .section-subtitle {
+        @apply text-lg opacity-70 mb-12;
+    }
+
+    .gradient-text {
+        @apply bg-clip-text text-transparent;
+        background-image: linear-gradient(135deg, var(--theme-primary, #3B82F6), var(--theme-secondary, #8B5CF6));
+    }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HIDE SCROLLBAR — Modern Minimalis
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Chrome, Edge, Safari, Opera ─── */
+::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-corner {
+    display: none !important;
+    background: transparent !important;
+}
+
+/* ─── Firefox ─── */
+* {
+    scrollbar-width: none !important;
+}
+
+/* ─── IE & Edge Legacy ─── */
+* {
+    -ms-overflow-style: none !important;
+}
+
+/* ─── Tetap bisa scroll ─── */
+html,
+body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
